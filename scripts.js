@@ -128,6 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let usedLines = []; // Array to store used lines
 let options_n = 2;
 
+document.getElementById('applyOptionsCount').addEventListener('click', function() {
+    const optionsCountInput = document.getElementById('optionsCount');
+    options_n = parseInt(optionsCountInput.value, 10) || 2; // Update options_n or default to 5
+});
+
 document.getElementById('extractScaleButton').addEventListener('click', function() {
     if (urls.length === 0) {
         document.getElementById('left-text').textContent = "Seleziona almeno un mazzo.";

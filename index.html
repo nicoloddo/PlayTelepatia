@@ -4,6 +4,7 @@
     <title>Telepatia</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/icon.png">
 </head>
 <body>
     <div id="title-container">
@@ -44,7 +45,7 @@
     <!-- Toggle Button -->
     <button id="toggleRightPanelBtn"></button>
 
-    <!-- Side Panel -->
+    <!-- Right Side Panel -->
     <div id="sidePanelRight" class="side-panel">
         <h2>SELEZIONA MAAAAZZZI</h2>
         <div class="deck-options">
@@ -54,7 +55,13 @@
             <!-- Add more scales as needed -->
         </div>
 
-        <h4>Qualunque modifica ai mazzi ripristina le carte usate durante la partita.</h3>
+        <h4>Qualunque modifica ai mazzi ripristina le carte usate durante la partita.</h4>
+
+        <div class="options-counter">
+            <label for="optionsCount">NUMERO DI OPZIONI:</label>
+            <input type="number" id="optionsCount" min="1" value="2"> <!-- Default value set to 5 -->
+            <button id="applyOptionsCount">Applica Numero</button>
+        </div>
     </div>
 
     <script src="scripts.js"></script>
