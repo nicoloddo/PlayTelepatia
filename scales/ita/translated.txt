@@ -23,16 +23,16 @@ Basico:Hipster
 Lavoro pericoloso:Lavoro sicuro
 Fantasy:Sci-Fi
 Casual:Formale
-Sottopagato:Sovrappagato
+Sottopagato:Strapagato
 Asciutto:Bagnato
 Abilità sottovalutata:Abilità sopravvalutata
-Proibito:Incoraggiato
+Proibito:Consigliabile
 Canzone triste:Canzone felice
 Fragile:Resistente
 Geek:Dork
 Buono:Cattivo
 Peggior giorno dell'anno:Miglior giorno dell'anno
-Cattiva abitudine:Buona abitudine
+Abitudine:Mania
 Amante dei gatti:Amante dei cani
 Amato segretamente:Apertamente amato
 Privo di talento:Talentuoso
@@ -115,7 +115,7 @@ Artigianale:Prodotta in massa
 Superpotere cattivo:Superpotere buono
 Inefficace:Efficace
 Incredibile:Credibile
-Volgare:Di classe
+Tamarro:Chic
 Temporaneo:Permanente
 Sembra una persona:Non sembra una persona
 Ha cattivo sapore:Ha buon sapore
@@ -177,7 +177,7 @@ Chiacchiere:Argomento pesante
 Mite:Piccante
 Religioso:Sacrilego
 Non arte:Arte
-Illegale:Vietato
+Illegale:Proibito
 Popolare:Elitista
 Fuori controllo:Sotto controllo
 Silenzioso:Rumoroso

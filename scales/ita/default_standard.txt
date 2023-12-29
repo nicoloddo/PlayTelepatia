@@ -1,0 +1,164 @@
+Abitudine:Mania
+Privo di talento:Talentuoso
+Lavoro pericoloso:Lavoro sicuro
+Corto:Lungo
+Amante dei gatti:Amante dei cani
+Pessima abitudine:Buona abitudine
+Peggiore giorno dell'anno:Migliore giorno dell'anno
+Bene:Male
+Primo della classe:Asino
+Fragile:Resistente
+Proibito:Consigliabile
+Canzone triste:Canzone allegra
+Abilità sottovalutata:Abilità sopravvalutata
+Asciutto:Bagnato
+Casual:Formale
+Sottopagato:Strapagato
+Pessimo attore:Ottimo attore
+Tamarro:Chic
+Argomento noioso:Argomento interessante
+Insapore:Saporito
+Richiede fortuna:Richiede abilità
+Sporco:Pulito
+Attore sottovalutato:Attore sopravvalutato
+Scuro:Chiaro
+Inutile in un'emergenza:Utile in un'emergenza
+Per bambini:Per adulti
+Storicamente importante:Storicamente irrilevante
+Non peloso:Peloso
+Veicolo veloce:Veicolo lento
+Saggio:Intelligente
+Difficile da fare:Facile da fare
+Colazione leggera:Colazione pesante
+Debole:Forte
+Criminale:Eroe
+Cosa sottovalutata da fare:Cosa sopravvalutata da fare
+Immorale:Etico
+Hobby noioso:Hobby Interessante
+Odore gradevole:Odore sgradevole
+Noioso:Eccitante
+Tradizionalmente maschile:Tradizionalmente femminile
+Pessimo programma TV:Ottimo programma TV
+Parte del corpo inutile:Parte del corpo utile
+Moda passeggera:Classico
+Impopolare:Popolare
+Amico:Nemico
+Moderato:Conservatore
+Invenzione inutile:Invenzione utile
+Cortesia:Scortesia
+Pessimo condimento per la pizza:Ottimo condimento per la pizza
+Schierato con il Lato Chiaro della Forza:Schierato con il Lato Oscuro della Forza
+Amato:Odiato
+Mestiere sopravvalutato:Mestiere sottovalutato
+Succede lentamente:Succede improvvisamente
+Pacchiano:Raffinato
+Probabile:Improbabile
+Spuntino:Pasto
+Star Wars:Star Trek
+Puzza:Profuma
+Non lo fa nessuno:Lo fanno tutti
+Vita breve:Vita lunga
+Mainstream:Di nicchia
+Animale che fa paura:Animale che fa tenerezza
+Perdita di tempo:Tempo ben impiegato
+Film triste:Film allegro
+Prova che Dio esiste:Prova che Dio non esiste
+Tagliente:Appuntito
+Film sottovalutato:Film sopravvalutato
+Pacifista:Guerrafondaio
+Laurea inutile:Laurea utile
+Modello da seguire:Modello da evitare
+Fortuna:Sfortuna
+Sostituibile:Insostituibile
+Inefficace:Efficace
+Pessimo superpotere:Ottimo superpotere
+Artigianale:Prodotto in serie
+Stupido:Geniale
+Meglio caldo:Meglio freddo
+Quadrato:Tondo
+Culturalmente significativo:Culturalmente irrilevante
+Pericoloso:Sicuro
+Comico:Drammatico
+Posto tranquillo:Posto rumoroso
+Cibo con pochi ingredienti:Cibo con molti ingredienti
+Eseguito male:Eseguito bene
+Ha una cattiva reputazione:Ha una buona reputazione
+Sciatto:Elegante
+Arma efficace:Arma non efficace
+Economico:Costoso
+Animale di piccole dimensioni:Animale di grandi dimensioni
+Bassa qualità:Alta qualità
+Facile da eliminare:Difficile da eliminare
+Inaffidabile:Affidabile
+Diviso:Intero
+Attività impopolare:Attività popolare
+Musicista sottovalutato:Musicista sopravvalutato
+Vizio:Virtù
+Crea poca dipendenza:Crea molta dipendenza
+Cattivo:Buono
+Facile da scrivere:Difficile da scrivere
+Non importante:Importante
+Cibo di sopravvivenza:Alta cucina
+Soffice:Duro
+Emoji utile:Emoji inutile
+Raro:Comune
+Film d'azione:Film d'avventura
+Persona antipatica:Persona simpatica
+Materia semplice:Materia difficile
+Sconosciuto:Famoso
+Cosa sottovalutata da possedere:Cosa sopravvalutata da possedere
+Persona matura:Persona immatura
+Fa stare male:Fa stare bene
+Non essenziale:Essenziale
+Cattivo per te:Buono per te
+Ruvido:Liscio
+Difficile da usare:Facile da usare
+Pigro:Iperattivo
+Film che Godzilla rovinerebbe:Film che Godzilla migliorerebbe
+Inutile:Utile
+Pessima musica:Ottima musica
+Non igienico:Igienico
+Grifondoro:Serpeverde
+Innocuo:Pericoloso
+Fallimento:Capolavoro
+Imperdonabile:Perdonabile
+Silenzioso:Rumoroso
+Fuori moda:Alla moda
+Cibo con cui ti sporchi:Cibo con cui non ti sporchi
+Sottovalutato:Sopravvalutato
+Stressante:Rilassante
+Tormentone estivo:Grande classico
+Pieno:Vuoto
+Ha un cattivo sapore:Ha un buon sapore
+Ottimo appuntamento:Pessimo appuntamento
+Temporaneo:Permanente
+Normale:Bizzarro
+Caldo:Freddo
+Brutto:Bello
+Pessimo film:Ottimo film
+Ipocalorico:Ipercalorico
+Poco colorato:Molto colorato
+Diffiile da pronunciare:Facile da pronunciare
+Ordinario:Straordinario
+Invendibile:Vendibile
+Facoltativo:Obbligatorio
+Film commerciale:Film d'autore
+Cibo etico:Cibo non etico
+Anni 80:Anni 90
+Persona cattiva:Persona buona
+Lineare:Sinuoso
+Cosa normale da possedere:Cosa bizzarra da possedere
+Cibo secco:Cibo umido
+Necessità:Capriccio
+Argomento non controverso:Argomento controverso
+Attività mentale:Attività fisica
+Meglio il libro:Meglio il film
+Introverso:Estroverso
+Animale comune da compagnia:Animale non comune da compagnia
+Rigido:Flessibile
+Persona egoista:Persona altruista
+Cattivo per la salute:Buono per la salute
+Poco colto:Molto colto
+Difficile da ricordare:Facile da ricordare
+Persona brutta:Persona bella
+Difficile da trovare:Facile da trovare
