@@ -227,6 +227,19 @@ body {
     background-color: transparent;
     position: absolute;
 }
+#scaleGuessButton {
+    background-image: url('img/buttons/spin_button.png');
+    background-size: cover;
+    width: 6vw;
+    height: 6vw;
+    right: 66vw;
+    transform: translateX(50%);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+}
 
 #lidButton {
     background-image: url('img/buttons/lid_button.png');
@@ -240,6 +253,24 @@ body {
     outline: none;
     background-color: transparent;
     position: absolute;
+}
+
+#reverseButton {
+    background-image: url('img/buttons/reverse_button.png');
+    background-size: cover;
+    width: 6vw;
+    height: 6.2vw;
+    left: -1vw;
+    top: 4vh;
+    z-index: 1001; /* Above the panel */
+    transform: translateX(50%);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+
+    filter: drop-shadow(1.5vw 1.5vw 1vw rgba(0, 0, 0, 0.8)); /* Horizontal offset, vertical offset, blur radius, color */
 }
 
 /* Side Panel Styles */
@@ -330,14 +361,14 @@ body {
     margin-bottom: 2vh; /* Spacing below the header */
     text-align: center; /* Center the text */
 }
-#optionsCount {
+#optionsCount, #guessOptionsCount {
     color: white;
     background-color: rgba(0, 0, 0, 0);
     font-size: 250%;
     width: 50%; /* Adjust width to be small */
     text-align: center;
 }
-#applyOptionsCount {
+#applyOptionsCount, #applyGuessOptionsCount {
     color: white;
     background-color: rgba(0, 0, 0, 0);
     font-size: 100%;

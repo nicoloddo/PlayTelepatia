@@ -1,8 +1,21 @@
-document.getElementById('spinButton').addEventListener('click', function() {
+// At page initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize URLs array on page load and add event listeners to sidebar checkboxes
+    var checkboxes = document.querySelectorAll('#sidePanelRight .deck-checkbox');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('click', updateSelectedUrls);
+    });
+
+    updateSelectedUrls(); // Initial update
+
+    document.getElementById('spinButton').addEventListener('click', spinButton); // initialize spin button
+});
+
+function spinButton() {
     var arrow = document.getElementById('arrow');
     var randomSpeed = Math.random() * 160 - 80; // Adjusted to range from -80 to 80 degrees
     arrow.style.transform = 'rotate(' + randomSpeed + 'deg)';
-});
+}
 
 document.getElementById('lidButton').addEventListener('click', function() {
     var lid = document.getElementById('lid');
@@ -112,17 +125,6 @@ function updateSelectedUrls() {
     let usedLines = []; // Restore the array to store used cards
 }
 
-// Initialize URLs array on page load and add event listeners to sidebar checkboxes
-document.addEventListener('DOMContentLoaded', () => {
-    var checkboxes = document.querySelectorAll('#sidePanelRight .deck-checkbox');
-    checkboxes.forEach(function(checkbox) {
-        checkbox.addEventListener('click', updateSelectedUrls);
-    });
-
-    updateSelectedUrls(); // Initial update
-});
-
-
 
 // CARD EXTRACT MECHANICS
 let usedLines = []; // Array to store used lines
@@ -134,6 +136,10 @@ document.getElementById('applyOptionsCount').addEventListener('click', function(
 });
 
 document.getElementById('extractScaleButton').addEventListener('click', function() {
+    if (lid.classList.contains('lid-invisible')) {
+        lid.classList.remove('lid-invisible');
+        lid.classList.add('lid-visible');
+    }
     if (urls.length === 0) {
         document.getElementById('left-text').textContent = "Seleziona almeno un mazzo.";
         document.getElementById('right-text').textContent = "Il tasto è in alto a destra.";
@@ -186,10 +192,146 @@ function displayScaleOptions(options) {
     document.getElementById('scaleSelectionPanel').style.display = 'block'; // Show panel
 }
 
+let lastSelectedLine = "Criminale:Eroe";
 function selectScaleOption(selectedLine) {
     const [leftWriting, rightWriting] = selectedLine.split(':');
     document.getElementById('left-text').textContent = leftWriting;
     document.getElementById('right-text').textContent = rightWriting;
     usedLines.push(selectedLine); // Add the selected line to the array
     document.getElementById('scaleSelectionPanel').style.display = 'none'; // Hide panel
+    lastSelectedLine = selectedLine;
+}
+
+
+// REVERSE MODE
+document.getElementById('reverseButton').addEventListener('click', function() {
+    var button = document.getElementById('spinButton') || document.getElementById('scaleGuessButton');
+    var isSpinButton = button.id === 'spinButton';
+
+    var lidButton = document.getElementById('lidButton');
+
+    if (isSpinButton) { // REVERSE MODE TRIGGERED
+        // Change to scaleGuessButton
+        button.id = 'scaleGuessButton';
+        button.style.backgroundImage = 'url("img/buttons/scale_guess_button.png")';
+        button.removeEventListener('click', spinButton); // Remove spin function
+        button.addEventListener('click', guessButton); // Attach guess function
+
+        lidButton.classList.add('button-disabled');
+        lidButton.disabled = true;
+        if (lid.classList.contains('lid-invisible')) {
+            lid.classList.remove('lid-invisible');
+            lid.classList.add('lid-visible');
+        }
+    } else {
+        // Change back to spinButton
+        button.id = 'spinButton';
+        button.style.backgroundImage = 'url("img/buttons/spin_button.png")';
+        button.removeEventListener('click', guessButton); // Remove guess function
+        button.addEventListener('click', spinButton); // Re-attach spin function
+
+        lidButton.classList.remove('button-disabled');
+        lidButton.disabled = false;
+    }
+});
+
+document.getElementById('applyGuessOptionsCount').addEventListener('click', function() {
+    const optionsCountInput = document.getElementById('guessOptionsCount');
+    guess_options_n = parseInt(optionsCountInput.value, 10) || 2; // Update options_n or default to 5
+});
+
+let guess_options_n = 2;
+
+function guessButton() {
+    if (lid.classList.contains('lid-invisible')) {
+        lid.classList.remove('lid-invisible');
+        lid.classList.add('lid-visible');
+    }
+
+    if (urls.length === 0) {
+        document.getElementById('left-text').textContent = "Seleziona almeno un mazzo.";
+        document.getElementById('right-text').textContent = "Il tasto è in alto a destra.";
+        return;
+    }
+
+    Promise.all(urls.map(url => fetch(url).then(response => response.text())))
+    .then(texts => {
+        const lines = texts.reduce((lines, text) => lines.concat(text.split('\n')), []);
+        let options = [];
+        
+        // Filter out used lines
+        const unusedLines = lines.filter(line => !usedLines.includes(line));
+
+        if (unusedLines.length === 0) {
+            document.getElementById('left-text').textContent = "Non ci sono carte nuove.";
+            document.getElementById('right-text').textContent = "Ricarica la pagina.";
+            console.log("All lines have been used.");
+            return;
+        }
+
+        // Extract up to options_n options
+        while (options.length < guess_options_n && options.length < unusedLines.length) {
+            let randomIndex = Math.floor(Math.random() * unusedLines.length);
+            let randomLine = unusedLines[randomIndex];
+
+            if (!options.includes(randomLine)) {
+                options.push(randomLine);
+            }
+        }
+
+        guessScaleOptions(options); // Function to display options in the panel
+    })
+    .catch(error => {
+        console.error('Error fetching scale files:', error);
+    });
+}
+
+function guessScaleOptions(options) {
+    document.getElementById('left-text').textContent = "";
+    document.getElementById('right-text').textContent = "";
+
+    const optionsContainer = document.getElementById('scaleOptions');
+    optionsContainer.innerHTML = '';
+
+    // Include the last selected line if it exists
+    if (lastSelectedLine && !options.includes(lastSelectedLine)) {
+        let randomIndex = Math.floor(Math.random() * options.length);
+        options.splice(randomIndex, 0, lastSelectedLine);
+    }
+
+    options.forEach(line => {
+        const [left, right] = line.split(':');
+        const optionButton = document.createElement('button');
+        optionButton.textContent = `${left} - ${right}`;
+        optionButton.onclick = () => selectedGuessOption(line);
+        optionsContainer.appendChild(optionButton);
+    });
+
+    document.getElementById('scaleSelectionPanel').style.display = 'block';
+}
+
+function selectedGuessOption(selectedLine) {
+    const [leftWriting, rightWriting] = selectedLine.split(':');
+    document.getElementById('left-text').textContent = leftWriting;
+    document.getElementById('right-text').textContent = rightWriting;
+
+    // Check if the selected line is the previously selected line
+    if (selectedLine === lastSelectedLine) {
+        console.log("Correct!");
+        arrow.style.transform = 'rotate(' + guesserRotation + 'deg)';
+    } else {
+        console.log("Wrong.");
+        if(guesserRotation > 0) {
+            var randomSpeed = Math.random() * 60 - 50; // Adjusted to range from -80 to 80 degrees
+        } else {
+            var randomSpeed = Math.random() * 60 + 20; // Adjusted to range from -80 to 80 degrees
+        }
+        arrow.style.transform = 'rotate(' + randomSpeed + 'deg)';
+    }
+    if (lid.classList.contains('lid-visible')) {
+        lid.classList.remove('lid-visible');
+        lid.classList.add('lid-invisible');
+    }
+
+    document.getElementById('scaleSelectionPanel').style.display = 'none';
 }
