@@ -115,16 +115,41 @@ body {
 }
 
 
+#guesser-container {
+    position: absolute;
+    height: 20vw; /* Same as the guesser image */
+    width: fit-content; /* Fit the container to the size of the guesser */
+    top: 35%;
+    z-index: 4;
+}
+
 #guesser {
-    height: 75%;
+    height: 100%;
     width: auto;
     position: absolute;
-    top: 35%;
     transform-origin: center 85%; /* Adjust to move rotation point */
-    transform: rotate(0deg);
-    z-index: 4;
+    transform: rotate(0deg) translateX(-50%);
+    left: 100%; /* Center horizontally */
+    filter: drop-shadow(-1.5vw -0.2vw 1vw rgba(0, 0, 0, 0.8));
+}
 
-    filter: drop-shadow(-1.5vw -0.2vw 1vw rgba(0, 0, 0, 0.8)); /* Horizontal offset, vertical offset, blur radius, color */
+.lock-button {
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    font-size: 1.8vw;
+    cursor: pointer;
+    z-index: 5;
+    top: 85%; /* Match the transform-origin vertical position */
+    transform: translate(-50%, -50%); /* Adjust to align exactly at the transform-origin */
+    border-radius: 50%; /* Make it circular */
+    background-color: transparent; /* Make the background transparent */
+    color: black;
+    border: none; /* Remove any default border */
+    outline: none; /* Remove outline on focus */
+    display: flex; /* To center the icon inside the button */
+    align-items: center; /* Align icon vertically */
+    justify-content: center; /* Align icon horizontally */
 }
 
 
@@ -169,6 +194,12 @@ body {
     flex-grow: 1; /* Grow to take the remaining space */
 }
 
+.button-disabled {
+    filter: grayscale(100%); /* Convert to black and white */
+    opacity: 0.6; /* Optional: reduce opacity to make it look more "disabled" */
+    cursor: not-allowed; /* Change cursor to indicate the button is not clickable */
+}
+
 #extractScaleButton {
     background-image: url('img/buttons/scale_button.png');
     background-size: cover;
@@ -211,32 +242,34 @@ body {
     position: absolute;
 }
 
-
 /* Side Panel Styles */
 .side-panel {
     font-family: Georgia, serif; /* Example font */
     color: white; /* Text color */
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(30px); /* Blur effect for everything behind the container */
-
-    position: fixed;
-    right: -20vw; /* Start off the screen */
-    top: 0;
-    width: 10vw;
-    height: 100%;
-    padding: 2vw;
     box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.7); /* Horizontal offset, vertical offset, blur radius, color */
-    transition: right 0.3s;
     z-index: 1000; /* Ensure it's above other elements */
 }
 
+#sidePanelRight {
+    position: fixed;
+    top: 0;
+    right: -20vw; /* Start off the screen */
+    transition: right 0.3s;
+
+    width: 10vw;
+    height: 100%;
+    padding: 2vw;
+}
+
 /* Show Panel */
-.side-panel.open {
+#sidePanelRight.open {
     right: 0; /* Bring onto the screen */
 }
 
 /* Toggle Button Styles */
-#togglePanelBtn {
+#toggleRightPanelBtn {
     background-image: url('img/buttons/mazzi_button.png');
     background-size: cover;
     width: 6vw;

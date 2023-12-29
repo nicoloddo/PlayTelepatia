@@ -15,17 +15,52 @@ document.getElementById('lidButton').addEventListener('click', function() {
     }
 });
 
+
 // GUESSER *******
+var rotationStep = 2; // Adjust the sensitivity of rotation
+document.getElementById('lockButton').addEventListener('click', function() {
+    var icon = this.querySelector('i');
+    var spinButton = document.getElementById('spinButton');
+    var lidButton = document.getElementById('lidButton');
+    var extractScaleButton = document.getElementById('extractScaleButton');
+
+    if (icon.classList.contains('fa-lock-open')) {
+        icon.classList.remove('fa-lock-open');
+        icon.classList.add('fa-lock');
+        rotationStep = 0; // Lock rotation
+
+        // Disable the buttons and apply the disabled style
+        spinButton.disabled = true;
+        lidButton.disabled = true;
+        extractScaleButton.disabled = true;
+        spinButton.classList.add('button-disabled');
+        lidButton.classList.add('button-disabled');
+        extractScaleButton.classList.add('button-disabled');
+    } else {
+        icon.classList.remove('fa-lock');
+        icon.classList.add('fa-lock-open');
+        rotationStep = 2; // Adjust the sensitivity of rotation
+
+        // Enable the buttons and remove the disabled style
+        spinButton.disabled = false;
+        lidButton.disabled = false;
+        extractScaleButton.disabled = false;
+        spinButton.classList.remove('button-disabled');
+        lidButton.classList.remove('button-disabled');
+        extractScaleButton.classList.remove('button-disabled');
+    }
+});
+
+
 var guesserRotation = 0;
 var initialTouchX;
 
 function rotateGuesser(deltaX) {
-    var rotationStep = 2; // Adjust the sensitivity of rotation
     var tempRotation = guesserRotation + deltaX * rotationStep;
     
     if(tempRotation <= 100 && tempRotation >= -100) {
         guesserRotation += deltaX * rotationStep;
-        document.getElementById('guesser').style.transform = 'rotate(' + guesserRotation + 'deg)';
+        document.getElementById('guesser').style.transform = 'translateX(-50%) rotate(' + guesserRotation + 'deg)';
     } 
 }
 
@@ -58,12 +93,12 @@ document.getElementById('guesser').addEventListener('touchmove', function(event)
 // SIDE PANEL MECHANICS
 let urls = []; // Global array to store selected URLs
 
-document.getElementById('togglePanelBtn').addEventListener('click', function() {
-    var panel = document.getElementById('sidePanel');
+document.getElementById('toggleRightPanelBtn').addEventListener('click', function() {
+    var panel = document.getElementById('sidePanelRight');
     panel.classList.toggle('open');
 });
 
-// Function to update URLs based on checked checkboxes
+// Function to update URLs of the decks to use, based on checked checkboxes
 function updateSelectedUrls() {
     var checkboxes = document.querySelectorAll('.scale-options input[type="checkbox"]');
     urls = []; // Reset the URLs array
@@ -73,11 +108,13 @@ function updateSelectedUrls() {
             urls.push(checkbox.value);
         }
     });
+
+    let usedLines = []; // Restore the array to store used cards
 }
 
 // Initialize URLs array on page load and add event listeners to sidebar checkboxes
 document.addEventListener('DOMContentLoaded', () => {
-    var checkboxes = document.querySelectorAll('#sidePanel .scale-checkbox');
+    var checkboxes = document.querySelectorAll('#sidePanelRight .scale-checkbox');
     checkboxes.forEach(function(checkbox) {
         checkbox.addEventListener('click', updateSelectedUrls);
     });
