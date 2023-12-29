@@ -1,0 +1,334 @@
+body {
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+#title-image {
+    width: 30vw;
+    margin-top: -2.5vw;
+    filter: drop-shadow(-1.5vw 1.2vw 1vw rgba(0, 0, 0, 1)); /* Horizontal offset, vertical offset, blur radius, color */
+}
+
+#speedometer-container {
+    width: 55vw; /* 50% of the viewport width */
+    max-width: 1044px; /* Maximum width */
+    min-width: 300px; /* Minimum width */
+    margin-top:-5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#speedometer {
+    width: 100%; /* Use 100% of the parent container width */
+    height: 0; /* Initially set height to 0 */
+    padding-top: 49.42%; /* Set top padding to maintain aspect ratio */
+    background: url('img/speedometer.png') no-repeat center center;
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+
+    filter: drop-shadow(-1.5vw -1.2vw 1vw rgba(0, 0, 0, 1)); /* Horizontal offset, vertical offset, blur radius, color */
+}
+
+#speedometer_borders {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0%;
+    z-index: 2;
+}
+
+
+#lid {
+    width: 100%; /* Match the width of the speedometer */
+    height: 0; /* Use the same height trick as the speedometer */
+    padding-top: 49.42%; /* Match the padding-top of the speedometer */
+    position: absolute;
+    top: 0; /* Align the top edge with the speedometer */
+    left: 0; /* Align the left edge with the speedometer */
+    background: url('img/lid.png') no-repeat center center;
+    background-size: contain;
+    z-index: 3; /* Ensure it's above the speedometer */
+}
+
+
+.lid-visible {
+    transition: transform 0.5s; 
+    transform: translateY(0%); /* Slide into view */
+}
+.lid-invisible {
+    transition: transform 6s; /* Animate to the invisible state slowly */
+    transform: translateY(-250%); /* Slide out of view */
+}
+
+#lid-text {
+    position: absolute;
+    top: 50%; /* Adjust as needed to position over the image */
+    left: 50%; /* Adjust as needed to position over the image */
+    transform: translate(-50%, -190%);
+    background-color: transparent;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    border: 2px solid white;
+    border-radius: 15px; /* Adjust this value to control the roundness */
+    padding: 10px;
+    resize: none;
+    overflow: auto;
+    width: 42%; /* Adjust width as needed */
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    text-transform: uppercase;
+}
+
+#lid-text::placeholder {
+    color: white; /* White font color for placeholder text */
+    opacity: 1; /* Full opacity to ensure it's fully visible */
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+#arrow {
+    height: 100%; /* Adjust as needed to fit the speedometer */
+    width: 40%; /* Adjust based on the arrow's aspect ratio */
+    position: absolute;
+    top: 0%; /* Center vertically in the parent */
+    transform: rotate(0deg); /* Center and set initial rotation */
+    transform-origin: bottom; /* Set the rotation origin at the bottom center */
+}
+
+
+#guesser {
+    height: 75%;
+    width: auto;
+    position: absolute;
+    top: 35%;
+    transform-origin: center 85%; /* Adjust to move rotation point */
+    transform: rotate(0deg);
+    z-index: 4;
+
+    filter: drop-shadow(-1.5vw -0.2vw 1vw rgba(0, 0, 0, 0.8)); /* Horizontal offset, vertical offset, blur radius, color */
+}
+
+
+.scale-text {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto; /* Center align the entire block */
+    margin-right: auto;
+    margin-top: -1%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Blur effect for everything behind the container */
+    border-top: 0.4vw solid black;
+    border-bottom: 0.4vw solid black;
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.7); /* Horizontal offset, vertical offset, blur radius, color */
+
+    text-transform: uppercase;
+}
+
+#left-text, #right-text {
+    color: white;
+    font-size: 1.3vw;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    flex: 1; /* Allow the text elements to grow and shrink */
+    white-space: normal; /* Allow the text to wrap */
+    text-align: center; /* Center text within each block */
+    padding: 1.5%; /* Adjust padding as needed */
+    margin: 0 2%; /* Add margin to separate the text elements */
+
+}
+
+.buttons {
+    display: flex;
+    width: 100vw; /* Take the full width of the container */
+    align-items: center;
+    margin-left: auto; /* Center align the entire block */
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Blur effect for everything behind the container */
+    flex-grow: 1; /* Grow to take the remaining space */
+}
+
+#extractScaleButton {
+    background-image: url('img/buttons/scale_button.png');
+    background-size: cover;
+    width: 5.5vw;
+    height: 5.5vw;
+    right: 33vw;
+    transform: translateX(50%);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+}
+
+#spinButton {
+    background-image: url('img/buttons/spin_button.png');
+    background-size: cover;
+    width: 6vw;
+    height: 6vw;
+    right: 66vw;
+    transform: translateX(50%);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+}
+
+#lidButton {
+    background-image: url('img/buttons/lid_button.png');
+    background-size: cover;
+    width: 6vw;
+    height: 6vw;
+    right: 50vw;
+    transform: translateX(50%);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+}
+
+
+/* Side Panel Styles */
+.side-panel {
+    font-family: Georgia, serif; /* Example font */
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px); /* Blur effect for everything behind the container */
+
+    position: fixed;
+    right: -20vw; /* Start off the screen */
+    top: 0;
+    width: 10vw;
+    height: 100%;
+    padding: 2vw;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.7); /* Horizontal offset, vertical offset, blur radius, color */
+    transition: right 0.3s;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Show Panel */
+.side-panel.open {
+    right: 0; /* Bring onto the screen */
+}
+
+/* Toggle Button Styles */
+#togglePanelBtn {
+    background-image: url('img/buttons/mazzi_button.png');
+    background-size: cover;
+    width: 6vw;
+    height: 6vw;
+    right: 5vw;
+    top: 4vh;
+    z-index: 1001; /* Above the panel */
+    transform: translateX(50%);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+
+    filter: drop-shadow(-1.5vw 1.5vw 1vw rgba(0, 0, 0, 0.8)); /* Horizontal offset, vertical offset, blur radius, color */
+}
+
+/* Style for the h2 header in the side panel */
+.side-panel h2 {
+    color: white; /* Darker color for the header */
+    margin-top: 16vh;
+    margin-bottom: 5vh; /* Spacing below the header */
+    text-align: center; /* Center the text */
+}
+
+/* Style for the labels in the scale options */
+.side-panel .scale-options label {
+    display: block; /* Make each label a block element */
+    margin-bottom: 10px; /* Spacing between each label */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 5px 10px; /* Padding for better touch area */
+    border-radius: 5px; /* Rounded corners for aesthetic */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for labels */
+.side-panel .scale-options label:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darken the label on hover */
+}
+
+/* Style for the checkboxes */
+.scale-checkbox {
+    margin-right: 10px; /* Spacing between the checkbox and the label text */
+}
+
+/* Responsive Design for mobile Screens */
+@media (min-aspect-ratio: 2) or (max-width: 1280) {
+    #speedometer-container {
+        width: 50vw;
+        margin-top:-14vh;
+    }
+    #left-text, #right-text {
+        font-size: 1.7vw;
+    }
+
+    #lidButton, #spinButton {
+        width: 8vw;
+        height: 8vw;
+    }
+    #extractScaleButton {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #title-image {
+        margin-top: -4vw;
+    }
+
+    #lid-text {
+        transform: translate(-50%, -150%);
+        width: 45%;
+        font-size: 1.4vw;
+    }
+
+    .side-panel {
+        width: 20vw;
+        right: -30vw;
+    }
+}
+
+@media (max-aspect-ratio: 1.5) {
+    .side-panel {
+        width: 30vw;
+        right: -80vw;
+    }
+
+    #lidButton, #spinButton {
+        width: 10vw;
+        height: 10vw;
+    }
+    #extractScaleButton {
+        width: 9vw;
+        height: 9vw;
+    }
+}

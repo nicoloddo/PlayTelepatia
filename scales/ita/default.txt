@@ -1,0 +1,252 @@
+Cattivo:Buono
+Leggermente addictive:Molto addictive
+Caldo:Freddo
+Normale:Strano
+Incolore:Colorato
+Basso contenuto calorico:Alto contenuto calorico
+Si sente male:Si sente bene
+Inessenziale:Essenziale
+Economico:Costoso
+Arma sottovalutata:Arma sopravvalutata
+Raro:Comune
+Emoji poco sexy:Emoji sexy
+Materia facile:Materia difficile
+Sconosciuto:Famoso
+Difficile da usare:Facile da usare
+Stanco:Carico
+Sporco:Pulito
+Richiede fortuna:Richiede abilità
+Insapore:Saporito
+Argomento noioso:Argomento affascinante
+Cattivo attore:Buon attore
+Basico:Hipster
+Lavoro pericoloso:Lavoro sicuro
+Fantasy:Sci-Fi
+Casual:Formale
+Sottopagato:Sovrappagato
+Asciutto:Bagnato
+Abilità sottovalutata:Abilità sopravvalutata
+Proibito:Incoraggiato
+Canzone triste:Canzone felice
+Fragile:Resistente
+Geek:Dork
+Buono:Cattivo
+Peggior giorno dell'anno:Miglior giorno dell'anno
+Cattiva abitudine:Buona abitudine
+Amante dei gatti:Amante dei cani
+Amato segretamente:Apertamente amato
+Privo di talento:Talentuoso
+Scuro:Chiaro
+Attore sottovalutato:Attore sopravvalutato
+Difficile da trovare:Facile da trovare
+Persona brutta:Persona bella
+Difficile da ricordare:Facile da ricordare
+Volgare:Intellettuale
+Malsano:Sano
+Persona cattiva:Persona buona
+Storicamente importante:Storicamente irrilevante
+Senza peli:Peloso
+Rigido:Flessibile
+Animale domestico normale:Animale domestico esotico
+Introverso:Estroverso
+Il libro era meglio:Il film era meglio
+Cattivo film:Buon film
+Brutto:Bello
+Avviene lentamente:Avviene all'improvviso
+Lavoro:Carriera
+Amato:Odiato
+Il lato illuminato della Forza:Il lato oscuro della Forza
+Condimento per pizza cattivo:Condimento per pizza buono
+Distopia:Utopia
+Persona matura:Persona immatura
+Cosa sottovalutata da possedere:Cosa sopravvalutata da possedere
+Persona meschina:Persona gentile
+Film d'azione:Film d'avventura
+Attività mentale:Attività fisica
+Argomento non controverso:Argomento controverso
+Necessità:Desiderio
+Cibo secco:Cibo umido
+Cosa normale da possedere:Cosa strana da possedere
+Dritto:Curvo
+Cattiva persona:Buona persona
+Anni '80:Anni '90
+Etico da mangiare:Non etico da mangiare
+Film:Pellicola
+Opzionale:Obbligatorio
+Lettera dell'alfabeto sottovalutata:Lettera dell'alfabeto sopravvalutata
+Ordinario:Straordinario
+Difficile da pronunciare:Facile da pronunciare
+Bassa qualità:Alta qualità
+Animale poco sexy:Animale sexy
+Semplice:Sfoggiato
+Ha una cattiva reputazione:Ha una buona reputazione
+Mal fatto:Ben fatto
+Non un panino:Un panino
+Posto tranquillo:Posto rumoroso
+Commedia:Dramma
+Pericoloso:Sicuro
+Culturalmente significativo:Culturalmente insignificante
+Sostituibile:Insostituibile
+Peggior atleta di tutti i tempi:Miglior atleta di tutti i tempi
+Role Model:Cattiva influenza
+Laurea inutile:Laurea utile
+Pacifico:Bellicoso
+Film sottovalutato:Film sopravvalutato
+Ruvido:Liscio
+Fa male:Fa bene
+Rotondo:Appuntito
+Prova che Dio esiste:Prova che Dio non esiste
+Film triste:Film felice
+Perdita di tempo:Buon uso del tempo
+Animale spaventoso:Animale simpatico
+Mainstream:Di Nicchia
+Breve durata:Lunga durata
+Nessuno lo fa:Tutti lo fanno
+Puzza:Profuma
+Star Wars:Star Trek
+Snack:Pasto intero
+Azienda buona:Azienda malvagia
+Morbido:Duro
+Sostentamento:Alta cucina
+Quadrato:Rotondo
+Meglio caldo:Meglio freddo
+Stupido:Geniale
+Artigianale:Prodotta in massa
+Superpotere cattivo:Superpotere buono
+Inefficace:Efficace
+Incredibile:Credibile
+Volgare:Di classe
+Temporaneo:Permanente
+Sembra una persona:Non sembra una persona
+Ha cattivo sapore:Ha buon sapore
+Sport:Gioco
+Non figo:Figo
+Peggior persona vivente:Miglior persona vivente
+Sottovalutato:Sopravvalutato
+Cibo disordinato:Cibo pulito
+Non etico:Etico
+Regalo cattivo:Buon regalo
+Non alla moda:Alla moda
+Combattente della libertà:Terrorista
+Imperdonabile:Perdonabile
+Fallimento:Capolavoro
+Innocuo:Nocivo
+Griffondoro:Serpeverde
+Non igienico:Igienico
+Cattiva musica:Buona musica
+Inutile:Utile
+Film che Godzilla rovinerebbe:Film che Godzilla migliorerebbe
+Insignificante:Importante
+Facile da scrivere:Difficile da scrivere
+Vizio:Virtù
+Musicista sottovalutato:Musicista sopravvalutato
+Attività impopolare:Attività popolare
+Diviso:Intero
+Inaffidabile:Affidabile
+Facile da uccidere:Difficile da uccidere
+Instabile:Stabile
+Animale tondo:Animale appuntito
+Brutta serie TV:Buona serie TV
+Tradizionalmente maschile:Tradizionalmente femminile
+Parte del corpo inutile:Parte del corpo utile
+Moda:Classico
+Debole:Forte
+Cereali disgustosi:Cereali deliziosi
+Invenzione inutile:Invenzione utile
+Liberale:Conservatore
+Impopolare:Popolare
+Amico:Nemico
+Noioso:Eccitante
+Puzza male:Puzza bene
+Criminale:Eroe
+Cosa sottovalutata da fare:Cosa sopravvalutata da fare
+Inutile in emergenza:Utile in emergenza
+Per bambini:Per adulti
+Saggio:Intelligente
+Facile da fare:Difficile da fare
+Senza valore:Inestimabile
+Natura:Educazione
+Dittatura:Democrazia
+Saluto normale:Saluto strano
+Nome per cane:Nome per gatto
+Apolitico:Partigiano
+Limitato:Infinito
+Evento casual:Evento formale
+Cattivo investimento:Buon investimento
+Chiacchiere:Argomento pesante
+Mite:Piccante
+Religioso:Sacrilego
+Non arte:Arte
+Illegale:Vietato
+Popolare:Elitista
+Fuori controllo:Sotto controllo
+Silenzioso:Rumoroso
+Pokémon poco sexy:Pokémon sexy
+Segreto:Di pubblico dominio
+Troppo piccolo:Troppo grande
+Corto:Lungo
+Peggior anno della storia:Miglior anno della storia
+Socialista:Capitalista
+Fatto poco conosciuto:Fatto ben noto
+Fermo:Mobile
+Problema locale:Problema globale
+Talento:Abilità
+Peggior era in cui viaggiare nel tempo:Miglior era in cui viaggiare nel tempo
+Il peggiore:Il migliore
+Numero piccolo:Numero grande
+VERO:FALSO
+Futuristico:Antiquato
+Parola brutta:Parola bella
+Piccolo:Minuscolo
+Innaturale:Naturale
+Persona genuina:Persona falsa
+Banale:Originale
+Galateo:Maniere
+Colore poco sexy:Colore sexy
+Beneficia solo te:Beneficia tutti
+Impotente:Potente
+Non svapa:Svapa
+Frutta:Verdura
+Scienza:Fantasia
+Argomento divertente:Argomento serio
+Floscio:Retto
+Guilty Pleasure:Brutto e basta
+Pettegolezzo:Notizie
+Difficile sedersi sopra:Comodo sedersi sopra
+Non abbastanza:Troppo
+Orizzontale:Verticale
+Inodore:Profumato
+Abbracciabile:Non abbracciabile
+Eterogeneo:Omomogeneo
+Inclusivo:Esclusivo
+Cattiva razza di cane:Buona razza di cane
+Arte:Commercio
+One hit wonder:Icona pop
+Cattivo consiglio:Buon consiglio
+Tick:Tock
+Caramella cattiva:Buona caramella
+Tradizionale:Progressista
+Cattiva consistenza:Buona consistenza
+Illegale:Legale
+Pensiero profondo:Pensiero superficiale
+Cattiva scuola:Buona scuola
+Mai puntuale:Sempre puntuale
+Non vivrà fino a 100:Vivrà fino a 100
+Cattivo personaggio Disney:Buon personaggio Disney
+Simile:Identico
+Cattivo presidente:Buon presidente
+Bizzarro:Strano
+Famoso:Infame
+Dio meno potente:Dio più potente
+Persona noiosa:Persona divertente
+Libro sottovalutato:Libro sopravvalutato
+Saggezza generalmente accettata:Credenza di nicchia
+Peggior task:Miglior task
+Specie in pericolo:Specie sovrappopolate
+Blu:Verde
+Emozionante:Terrificante
+Nerd:Jock
+Atteso:Inaspettato
+Persona che potresti picchiare:Persona che ti picchierebbe
+Fobia irragionevole:Fobia ragionevole
+Gioco sottovalutato:Gioco sopravvalutato
