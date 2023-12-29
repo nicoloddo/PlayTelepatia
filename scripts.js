@@ -100,7 +100,7 @@ document.getElementById('toggleRightPanelBtn').addEventListener('click', functio
 
 // Function to update URLs of the decks to use, based on checked checkboxes
 function updateSelectedUrls() {
-    var checkboxes = document.querySelectorAll('.scale-options input[type="checkbox"]');
+    var checkboxes = document.querySelectorAll('.deck-options input[type="checkbox"]');
     urls = []; // Reset the URLs array
 
     checkboxes.forEach(function(checkbox) {
@@ -114,7 +114,7 @@ function updateSelectedUrls() {
 
 // Initialize URLs array on page load and add event listeners to sidebar checkboxes
 document.addEventListener('DOMContentLoaded', () => {
-    var checkboxes = document.querySelectorAll('#sidePanelRight .scale-checkbox');
+    var checkboxes = document.querySelectorAll('#sidePanelRight .deck-checkbox');
     checkboxes.forEach(function(checkbox) {
         checkbox.addEventListener('click', updateSelectedUrls);
     });
@@ -126,39 +126,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // CARD EXTRACT MECHANICS
 let usedLines = []; // Array to store used lines
+let options_n = 2;
 
 document.getElementById('extractScaleButton').addEventListener('click', function() {
     if (urls.length === 0) {
         document.getElementById('left-text').textContent = "Seleziona almeno un mazzo.";
-        document.getElementById('right-text').textContent = "Il tasto e' in alto a destra."
+        document.getElementById('right-text').textContent = "Il tasto è in alto a destra.";
         return;
     }
 
     Promise.all(urls.map(url => fetch(url).then(response => response.text())))
     .then(texts => {
         const lines = texts.reduce((lines, text) => lines.concat(text.split('\n')), []);
-        let randomLine;
-        let attempts = 0;
+        let options = [];
+        
+        // Filter out used lines
+        const unusedLines = lines.filter(line => !usedLines.includes(line));
 
-        do {
-            randomLine = lines[Math.floor(Math.random() * lines.length)];
-            attempts++;
-            // Prevent infinite loop if all lines have been used
-            if (attempts > lines.length) break;
-        } while (usedLines.includes(randomLine));
-
-        if (!usedLines.includes(randomLine)) {
-            const [leftWriting, rightWriting] = randomLine.split(':');
-            document.getElementById('left-text').textContent = leftWriting;
-            document.getElementById('right-text').textContent = rightWriting;
-            usedLines.push(randomLine); // Add the used line to the array
-        } else {
+        if (unusedLines.length === 0) {
             document.getElementById('left-text').textContent = "Non ci sono carte nuove.";
-            document.getElementById('right-text').textContent = "Ricarica la pagina."
+            document.getElementById('right-text').textContent = "Ricarica la pagina.";
             console.log("All lines have been used.");
+            return;
         }
+
+        // Extract up to options_n options
+        while (options.length < options_n && options.length < unusedLines.length) {
+            let randomIndex = Math.floor(Math.random() * unusedLines.length);
+            let randomLine = unusedLines[randomIndex];
+
+            if (!options.includes(randomLine)) {
+                options.push(randomLine);
+            }
+        }
+
+        displayScaleOptions(options); // Function to display options in the panel
     })
     .catch(error => {
         console.error('Error fetching scale files:', error);
     });
 });
+
+
+function displayScaleOptions(options) {
+    const optionsContainer = document.getElementById('scaleOptions');
+    optionsContainer.innerHTML = ''; // Clear previous options
+    options.forEach(line => {
+        const [left, right] = line.split(':');
+        const optionButton = document.createElement('button');
+        optionButton.textContent = `${left} - ${right}`;
+        optionButton.onclick = () => selectScaleOption(line);
+        optionsContainer.appendChild(optionButton);
+    });
+    document.getElementById('scaleSelectionPanel').style.display = 'block'; // Show panel
+}
+
+function selectScaleOption(selectedLine) {
+    const [leftWriting, rightWriting] = selectedLine.split(':');
+    document.getElementById('left-text').textContent = leftWriting;
+    document.getElementById('right-text').textContent = rightWriting;
+    usedLines.push(selectedLine); // Add the selected line to the array
+    document.getElementById('scaleSelectionPanel').style.display = 'none'; // Hide panel
+}

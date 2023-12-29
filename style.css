@@ -296,7 +296,7 @@ body {
 }
 
 /* Style for the labels in the scale options */
-.side-panel .scale-options label {
+.side-panel .deck-options label {
     display: block; /* Make each label a block element */
     margin-bottom: 10px; /* Spacing between each label */
     cursor: pointer; /* Pointer cursor on hover */
@@ -306,14 +306,58 @@ body {
 }
 
 /* Hover effect for labels */
-.side-panel .scale-options label:hover {
+.side-panel .deck-options label:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Slightly darken the label on hover */
 }
 
 /* Style for the checkboxes */
-.scale-checkbox {
+.deck-checkbox {
     margin-right: 10px; /* Spacing between the checkbox and the label text */
 }
+
+.scale-selection-panel {
+    font-family: Georgia, serif; /* Example font */
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px); /* Blur effect for everything behind the container */
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.7); /* Horizontal offset, vertical offset, blur radius, color */
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    padding: 70vw;
+    display: none; /* Initially hidden */
+    z-index: 1002; /* Above other elements */
+}
+
+.scale-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.scale-options button {
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.3vw;
+    text-transform: uppercase;
+
+    width: 80%;
+    display: block; /* Make each label a block element */
+    margin-bottom: 5%; /* Spacing between each label */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 1% 2%; /* Padding for better touch area */
+    border-radius: 10px; /* Rounded corners for aesthetic */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.scale-selection-panel .scale-options button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darken the label on hover */
+}
+
 
 /* Responsive Design for mobile Screens */
 @media (min-aspect-ratio: 2) or (max-width: 1280) {
