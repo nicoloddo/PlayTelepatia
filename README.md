@@ -1,4 +1,5 @@
 # Telepatia
+Play at [nicoloddo.github.io/PlayTelepatia/](https://nicoloddo.github.io/PlayTelepatia/)
 
 ## About the Project
 This project is a digital adaptation of the game "Wavelength," created for personal, educational, and non-commercial use. It is designed to be accessible for both Italian and English-speaking users. The game is heavily inspired by the original "Wavelength" game, and I've added my own twist with a "reverse mode" feature. Furthermore, users can choose between various decks to play with and even develop their own.
@@ -29,3 +30,5 @@ The original "Wavelength" is developed by [CMYK](https://www.cmyk.games/). For m
 
 ## Acknowledgements and Copyright
 This project is a tribute to and based on the original "Wavelength" game by CMYK. All intellectual property rights of the original game belong to CMYK. This adaptation is created purely for non-commercial use and as a personal project. Please support the original creators by visiting their [website](https://www.cmyk.games/).
+
+![Screenshot](https://i.imgur.com/0tas210.png)
