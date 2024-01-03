@@ -132,7 +132,7 @@ let options_n = 2;
 
 document.getElementById('applyOptionsCount').addEventListener('click', function() {
     const optionsCountInput = document.getElementById('optionsCount');
-    options_n = parseInt(optionsCountInput.value, 10) || 2; // Update options_n or default to 5
+    options_n = parseInt(optionsCountInput.value, 10) || 2; // Update options_n or default to 2
 });
 
 document.getElementById('extractScaleButton').addEventListener('click', function() {
