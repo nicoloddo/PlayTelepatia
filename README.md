@@ -1,4 +1,5 @@
 # Telepatia
+![Screenshot](https://i.imgur.com/0tas210.png)
 Play at [nicoloddo.github.io/PlayTelepatia/](https://nicoloddo.github.io/PlayTelepatia/)
 
 ## About the Project
@@ -30,5 +31,3 @@ The original "Wavelength" is developed by [CMYK](https://www.cmyk.games/). For m
 
 ## Acknowledgements and Copyright
 This project is a tribute to and based on the original "Wavelength" game by CMYK. All intellectual property rights of the original game belong to CMYK. This adaptation is created purely for non-commercial use and as a personal project. Please support the original creators by visiting their [website](https://www.cmyk.games/).
-
-![Screenshot](https://i.imgur.com/0tas210.png)
