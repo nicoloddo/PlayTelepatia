@@ -1,5 +1,5 @@
 # Telepatia
-![Screenshot](https://i.imgur.com/0tas210.png)
+[![Play!](https://i.imgur.com/0tas210.png)](https://nicoloddo.github.io/PlayTelepatia/)
 Play at [nicoloddo.github.io/PlayTelepatia/](https://nicoloddo.github.io/PlayTelepatia/)
 
 ## About the Project
