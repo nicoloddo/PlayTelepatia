@@ -377,10 +377,10 @@ function stopMoving() {
     }
 }
 
-document.getElementById('leftMoveButton').addEventListener('mousedown', function() { startMoving(-1); });
-document.getElementById('leftMoveButton').addEventListener('touchstart', function(e) { e.preventDefault(); startMoving(-1); }, { passive: false });
-document.getElementById('rightMoveButton').addEventListener('mousedown', function() { startMoving(1); });
-document.getElementById('rightMoveButton').addEventListener('touchstart', function(e) { e.preventDefault(); startMoving(1); }, { passive: false });
+document.getElementById('leftMoveButton').addEventListener('mousedown', function() { startMoving(-0.25); });
+document.getElementById('leftMoveButton').addEventListener('touchstart', function(e) { e.preventDefault(); startMoving(-0.25); }, { passive: false });
+document.getElementById('rightMoveButton').addEventListener('mousedown', function() { startMoving(0.25); });
+document.getElementById('rightMoveButton').addEventListener('touchstart', function(e) { e.preventDefault(); startMoving(0.25); }, { passive: false });
 
 document.addEventListener('mouseup', stopMoving);
 document.addEventListener('touchend', stopMoving);
