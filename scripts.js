@@ -91,16 +91,40 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Touch event listeners
-document.getElementById('guesser').addEventListener('touchstart', function(event) {
-    initialTouchX = event.touches[0].clientX;
-}, { passive: true });
+document.addEventListener('touchstart', function(event) {
+    // Only capture touch if it's not on the side panel or other interactive elements
+    var target = event.target;
+    var isInteractive = target.tagName === 'BUTTON' ||
+                        target.tagName === 'INPUT' ||
+                        target.tagName === 'TEXTAREA' ||
+                        target.closest('#sidePanelRight') ||
+                        target.closest('#scaleSelectionPanel');
 
-document.getElementById('guesser').addEventListener('touchmove', function(event) {
-    var currentTouchX = event.touches[0].clientX;
-    var deltaX = currentTouchX - initialTouchX;
-    rotateGuesser(deltaX);
-    initialTouchX = currentTouchX; // Update initial touch position
-}, { passive: true });
+    if (!isInteractive) {
+        initialTouchX = event.touches[0].clientX;
+    } else {
+        initialTouchX = null;
+    }
+}, { passive: false });
+
+document.addEventListener('touchmove', function(event) {
+    if (initialTouchX !== null && initialTouchX !== undefined) {
+        // Prevent default scrolling/swiping behavior while interacting with the gauge
+        event.preventDefault();
+
+        var currentTouchX = event.touches[0].clientX;
+        var deltaX = currentTouchX - initialTouchX;
+
+        // Reduce sensitivity for touch events to make it more precise
+        rotateGuesser(deltaX * 0.25);
+
+        initialTouchX = currentTouchX; // Update initial touch position
+    }
+}, { passive: false });
+
+document.addEventListener('touchend', function(event) {
+    initialTouchX = null;
+});
 
 
 // SIDE PANEL MECHANICS
@@ -335,3 +359,29 @@ function selectedGuessOption(selectedLine) {
 
     document.getElementById('scaleSelectionPanel').style.display = 'none';
 }
+
+// Move buttons logic
+var moveInterval = null;
+
+function startMoving(direction) {
+    if (moveInterval) return;
+    moveInterval = setInterval(function() {
+        rotateGuesser(direction);
+    }, 16); // ~60fps
+}
+
+function stopMoving() {
+    if (moveInterval) {
+        clearInterval(moveInterval);
+        moveInterval = null;
+    }
+}
+
+document.getElementById('leftMoveButton').addEventListener('mousedown', function() { startMoving(-0.25); });
+document.getElementById('leftMoveButton').addEventListener('touchstart', function(e) { e.preventDefault(); startMoving(-0.25); }, { passive: false });
+document.getElementById('rightMoveButton').addEventListener('mousedown', function() { startMoving(0.25); });
+document.getElementById('rightMoveButton').addEventListener('touchstart', function(e) { e.preventDefault(); startMoving(0.25); }, { passive: false });
+
+document.addEventListener('mouseup', stopMoving);
+document.addEventListener('touchend', stopMoving);
+document.addEventListener('touchcancel', stopMoving);
